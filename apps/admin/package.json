@@ -15,6 +15,7 @@
   },
   "devDependencies": {
     "@repo/eslint-config": "*",
+    "@repo/prettier-config": "*",
     "typescript": "^5",
     "@types/node": "^20",
     "@types/react": "^19",
@@ -22,5 +23,6 @@
     "eslint": "^9",
     "eslint-config-next": "15.1.4",
     "@eslint/eslintrc": "^3"
-  }
+  },
+  "prettier": "@repo/prettier-config"
 }
