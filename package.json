@@ -5,9 +5,12 @@
     "build": "turbo build",
     "dev": "turbo dev",
     "lint": "turbo lint",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\""
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "commit": "cz"
   },
   "devDependencies": {
+    "commitizen": "^4.3.1",
+    "cz-customizable": "^7.4.0",
     "prettier": "^3.2.5",
     "turbo": "^2.3.3",
     "typescript": "5.5.4"
@@ -18,6 +21,11 @@
   "packageManager": "npm@10.9.0",
   "workspaces": [
     "apps/*",
-    "packages/*"
-  ]
+    "configs/*"
+  ],
+  "config": {
+    "commitizen": {
+      "path": "cz-customizable"
+    }
+  }
 }
