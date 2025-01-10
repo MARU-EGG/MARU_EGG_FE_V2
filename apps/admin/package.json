@@ -21,6 +21,7 @@
     "@repo/eslint-config": "*",
     "@repo/prettier-config": "*",
     "@repo/tailwind-config": "*",
+    "@repo/ui": "*",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
