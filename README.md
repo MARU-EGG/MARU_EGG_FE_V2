@@ -1,84 +1,60 @@
-# Turborepo starter
+## 구성 요소
 
-This is an official starter Turborepo.
+이 Turborepo에는 다음과 같은 앱과 설정이 포함되어 있습니다:
 
-## Using this example
+### 앱 및 설정
 
-Run the following command:
+- `admin`: maru-egg 관리자 시스템 (NextJS)
+- `client`: maru-egg 챗봇 시스템 (React)
+- `@repo/ui`: admin과 client가 공통으로 사용하는 디자인 시스템
+- `@repo/eslint-config`: admin과 client가 사용하는 공통 lint 설정
+- `@repo/prettier-config`: admin과 client가 사용하는 공통 prettier 설정
+- `@repo/typescript-config`: admin과 client가 사용하는 공통 typescript 설정
+- `@repo/tailwind-config`: admin과 client가 사용하는 공통 tailwind 설정
 
-```sh
-npx create-turbo@latest
-```
+## 시작하기
 
-## What's inside?
+1. 저장소 클론
+   ```
+   git clone https://github.com/your-username/maru-egg.git
+   ```
+2. 의존성 설치
 
-This Turborepo includes the following packages/apps:
+   ```
+   npm install
+   ```
 
-### Apps and Packages
+3. 필요한 환경 변수 설정
+   ```
+   cp .env.example .env
+   ```
 
-- `docs`: a [Next.js](https://nextjs.org/) app
-- `web`: another [Next.js](https://nextjs.org/) app
-- `@repo/ui`: a stub React component library shared by both `web` and `docs` applications
-- `@repo/eslint-config`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
-- `@repo/typescript-config`: `tsconfig.json`s used throughout the monorepo
+## 개발 및 빌드
 
-Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
+### 개발
 
-### Utilities
-
-This Turborepo has some additional tools already setup for you:
-
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
-- [Prettier](https://prettier.io) for code formatting
-
-### Build
-
-To build all apps and packages, run the following command:
-
-```
-cd my-turborepo
-pnpm build
-```
-
-### Develop
-
-To develop all apps and packages, run the following command:
+모든 앱과 패키지를 개발 모드로 실행하려면 다음 명령어를 실행하세요:
 
 ```
-cd my-turborepo
-pnpm dev
+npm run dev
 ```
 
-### Remote Caching
+### 빌드
 
-> [!TIP]
-> Vercel Remote Cache is free for all plans. Get started today at [vercel.com](https://vercel.com/signup?/signup?utm_source=remote-cache-sdk&utm_campaign=free_remote_cache).
-
-Turborepo can use a technique known as [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching) to share cache artifacts across machines, enabling you to share build caches with your team and CI/CD pipelines.
-
-By default, Turborepo will cache locally. To enable Remote Caching you will need an account with Vercel. If you don't have an account you can [create one](https://vercel.com/signup?utm_source=turborepo-examples), then enter the following commands:
+모든 앱과 패키지를 빌드하려면 다음 명령어를 실행하세요:
 
 ```
-cd my-turborepo
-npx turbo login
+npm run build
 ```
 
-This will authenticate the Turborepo CLI with your [Vercel account](https://vercel.com/docs/concepts/personal-accounts/overview).
+## 커밋 규칙
 
-Next, you can link your Turborepo to your Remote Cache by running the following command from the root of your Turborepo:
+이 프로젝트는 Commitizen을 사용하여 일관된 커밋 메시지를 작성합니다.
+
+### 커밋하기
+
+일반 git commit 대신 다음 명령어를 사용하여 커밋하세요:
 
 ```
-npx turbo link
+npm run commit
 ```
-
-## Useful Links
-
-Learn more about the power of Turborepo:
-
-- [Tasks](https://turbo.build/repo/docs/core-concepts/monorepos/running-tasks)
-- [Caching](https://turbo.build/repo/docs/core-concepts/caching)
-- [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching)
-- [Filtering](https://turbo.build/repo/docs/core-concepts/monorepos/filtering)
-- [Configuration Options](https://turbo.build/repo/docs/reference/configuration)
-- [CLI Usage](https://turbo.build/repo/docs/reference/command-line-reference)
