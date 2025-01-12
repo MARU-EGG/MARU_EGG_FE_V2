@@ -6,7 +6,8 @@
     "dev": "turbo dev",
     "lint": "turbo lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
-    "commit": "cz"
+    "commit": "cz",
+    "build-storybook": "turbo run build-storybook --filter=storybook"
   },
   "devDependencies": {
     "commitizen": "^4.3.1",
