@@ -13,6 +13,8 @@
     "commitizen": "^4.3.1",
     "cz-customizable": "^7.4.0",
     "prettier": "^3.2.5",
+    "@trivago/prettier-plugin-sort-imports": "^5.2.1",
+    "prettier-plugin-tailwindcss": "^0.6.9",
     "turbo": "^2.3.3",
     "typescript": "5.5.4"
   },
