@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import Flyout from '../../../client/src/components/flyout/flyout';
+import FlyoutMenus from '../../../client/src/components/flyout/flyout-menus-wrapper';
 
 const MENU_ITEMS = [
   {
@@ -25,14 +26,14 @@ const MENU_ITEMS = [
 ];
 
 const meta = {
-  title: 'Components/Flyout',
-  component: Flyout,
+  title: 'Components/FlyoutMenus',
+  component: FlyoutMenus,
   parameters: {
     layout: 'centered',
   },
   tags: ['autodocs'],
   argTypes: {},
-} satisfies Meta<typeof Flyout>;
+} satisfies Meta<typeof FlyoutMenus>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
@@ -42,29 +43,22 @@ export const Default: Story = {
     children: null,
   },
   render: () => (
-    <Flyout>
-      <Flyout.Trigger className={'border'}>{MENU_ITEMS[0].label}</Flyout.Trigger>
-      <Flyout.Items>
-        {MENU_ITEMS[0].children.map((item, index) => (
-          <Flyout.Item key={index}>{item}</Flyout.Item>
-        ))}
-      </Flyout.Items>
-    </Flyout>
-  ),
-};
-
-export const Round: Story = {
-  args: {
-    children: null,
-  },
-  render: () => (
-    <Flyout>
-      <Flyout.Trigger className={'rounded-lg border'}>{MENU_ITEMS[0].label}</Flyout.Trigger>
-      <Flyout.Items>
-        {MENU_ITEMS[0].children.map((item, index) => (
-          <Flyout.Item key={index}>{item}</Flyout.Item>
-        ))}
-      </Flyout.Items>
-    </Flyout>
+    <FlyoutMenus>
+      {MENU_ITEMS.map((menu, index) => (
+        <Flyout>
+          <Flyout.Trigger
+            key={index}
+            className={index === 0 ? 'rounded-t-lg' : index === MENU_ITEMS.length - 1 ? 'rounded-b-lg' : 'rounded-none'}
+          >
+            {menu.label}
+          </Flyout.Trigger>
+          <Flyout.Items>
+            {menu.children.map((item, index) => (
+              <Flyout.Item key={index}>{item}</Flyout.Item>
+            ))}
+          </Flyout.Items>
+        </Flyout>
+      ))}
+    </FlyoutMenus>
   ),
 };
