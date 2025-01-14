@@ -17,6 +17,8 @@ jobs:
     steps:
       - name: Check out code
         uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
 
       - name: Use Node
         uses: actions/setup-node@v3
@@ -40,4 +42,4 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          message: "🚀 Storybook 링크: ${{ steps.chromatic.outputs.storybookUrl }}"
+          message: '🚀 Storybook 링크: ${{ steps.chromatic.outputs.storybookUrl }}'
