@@ -6,7 +6,7 @@ interface PresetButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement
 
 function PresetButton({ children, ...props }: PresetButtonProps) {
   const buttonClasses = cn(
-    'cursor-pointer rounded-lg border border-category_border bg-white px-4 py-3 text-black',
+    'cursor-pointer rounded-lg border border-category_border bg-white px-4 py-3 text-black transition-colors',
     'hover:border-primary hover:text-primary',
     'focus:border-primary focus:text-primary',
     'disabled:cursor-not-allowed disabled:bg-gray-100 disabled:text-gray-400',
