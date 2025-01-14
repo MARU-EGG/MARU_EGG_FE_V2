@@ -35,6 +35,5 @@
     },
     "types": ["vite-plugin-svgr/client"]
   },
-  "include": ["src"],
-  "files": ["src/types/svg.d.ts"]
+  "include": ["src"]
 }
