@@ -1,5 +1,5 @@
-import { admissionType } from './admission-type';
-import { questionCategory } from './question-category';
+import { admissionType } from '@/types/admission-type';
+import { questionCategory } from '@/types/question-category';
 
 export interface defaultPostQuestion {
   admissionType: admissionType;
