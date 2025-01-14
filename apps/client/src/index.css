@@ -5,5 +5,5 @@
 @tailwind utilities;
 
 .bg-image-tree-right {
-  @apply bg-[url('./assets/tree.svg')] bg-contain bg-right bg-no-repeat;
+  @apply bg-[url('./assets/svg/tree.svg')] bg-contain bg-right bg-no-repeat;
 }
