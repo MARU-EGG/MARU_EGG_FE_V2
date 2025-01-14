@@ -1,5 +1,12 @@
+import { Route, Routes } from 'react-router-dom';
+import MaruEgg from '@/page/maru-egg';
+
 function App() {
-  return <div className="text-4xl text-red-300">home</div>;
+  return (
+    <Routes>
+      <Route path="/" element={<MaruEgg />}></Route>
+    </Routes>
+  );
 }
 
 export default App;
