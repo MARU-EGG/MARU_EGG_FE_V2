@@ -29,13 +29,14 @@ jobs:
         run: npm install
 
       - name: Build Storybook
-        run: npx turbo run build-storybook --filter=storybook
+        run: npm run build-storybook
 
       - name: Publish to Chromatic
         id: chromatic
         uses: chromaui/action@latest
         with:
           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
+          storybookBuildDir: storybook-static
 
       - name: Comment PR with Storybook link
         uses: thollander/actions-comment-pull-request@v1

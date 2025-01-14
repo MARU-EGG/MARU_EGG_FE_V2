@@ -7,7 +7,7 @@
     "lint": "turbo lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "commit": "cz",
-    "build-storybook": "turbo run build-storybook --filter=storybook"
+    "build-storybook": "turbo run build-storybook --filter=storybook -- --output-dir=/tmp/chromatic-storybook"
   },
   "devDependencies": {
     "@trivago/prettier-plugin-sort-imports": "^5.2.1",
