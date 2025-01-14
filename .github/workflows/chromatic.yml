@@ -36,7 +36,7 @@ jobs:
         uses: chromaui/action@latest
         with:
           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
-          storybookBuildDir: storybook-static
+          storybookBuildDir: tmp/chromatic-storybook
 
       - name: Comment PR with Storybook link
         uses: thollander/actions-comment-pull-request@v1
