@@ -1,0 +1,9 @@
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.bg-image-tree-right {
+  @apply bg-[url('./assets/svg/tree.svg')] bg-contain bg-right bg-no-repeat;
+}

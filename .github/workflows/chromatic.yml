@@ -1,0 +1,50 @@
+name: Chromatic CI
+
+on:
+  pull_request:
+    branches:
+      - main
+      - develop
+  push:
+    branches:
+      - main
+      - develop
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  test-and-deploy-storybook:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Use Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build Storybook
+        run: npm run build-storybook
+
+      - name: Publish to Chromatic
+        id: chromatic
+        uses: chromaui/action@latest
+        with:
+          projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
+          storybookBuildDir: /tmp/chromatic-storybook
+
+      - name: Comment PR with Storybook link
+        uses: thollander/actions-comment-pull-request@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          message: '🚀 Storybook 링크: ${{ steps.chromatic.outputs.storybookUrl }}'
